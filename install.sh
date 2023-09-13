@@ -6,7 +6,7 @@ mkdir -p "$(dirname "$nvim")"
 curl -fL "$nvimurl" -o "$nvim" -z "$nvim"
 chmod u+x "$nvim"
 echo export PATH=\"\$PATH:\$HOME/.local/bin\" >> ~/.bashrc
-export PATH=\"\$PATH:\$HOME/.local/bin\"
+export PATH="$PATH:$HOME/.local/bin"
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
